@@ -1,4 +1,4 @@
-package gui;
+package com.conquerski.minersvillages.Gui;
 
 import dev.triumphteam.gui.builder.item.ItemBuilder;
 import dev.triumphteam.gui.guis.Gui;

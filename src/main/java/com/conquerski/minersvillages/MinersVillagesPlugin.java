@@ -2,7 +2,7 @@ package com.conquerski.minersvillages;
 
 import com.conquerski.minersvillages.Listeners.MultipleDurabilityListener;
 import com.conquerski.minersvillages.Listeners.NoMendingListener;
-import gui.repairGUI;
+import com.conquerski.minersvillages.Gui.repairGUI;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;

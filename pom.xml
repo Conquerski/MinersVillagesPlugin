@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.conquerski</groupId>
-    <artifactId>PayToRepair</artifactId>
+    <artifactId>MinersVillagesPlugin</artifactId>
     <version>1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>PayToRepair</name>
+    <name>MinersVillagesPlugin</name>
 
     <description>A repair tools plugin used for Miner's Village server!</description>
     <properties>
@@ -36,7 +36,7 @@
                     <relocations>
                         <relocation>
                             <pattern>dev.triumphteam.gui</pattern>
-                            <shadedPattern>com.conquerski.gui</shadedPattern> <!-- Replace package here here -->
+                            <shadedPattern>com.conquerski.minersvillages.Gui</shadedPattern> <!-- Replace package here here -->
                         </relocation>
                     </relocations>
                 </configuration>
