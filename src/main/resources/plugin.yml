@@ -1,0 +1,16 @@
+name: MinersVillagesPlugin
+version: '${project.version}'
+main: com.conquerski.minersvillages.MinersVillagesPlugin
+api-version: 1.19
+authors: [ ConquerSki ]
+description: A repair tools plugin used for Miner's Village server!
+softdepend: [Vault]
+commands:
+  xlop:
+    description: 无消耗修复
+    permission: "xl.op"
+    permission-message: "咱只能说忘记给你权限了！"
+  xl:
+    description: 你可以付一定的钱来修理你当前手里拿着的装备
+  xlgui:
+    description: 修理GUI界面
