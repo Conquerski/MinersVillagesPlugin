@@ -4,7 +4,7 @@ main: com.conquerski.minersvillages.MinersVillagesPlugin
 api-version: 1.19
 authors: [ ConquerSki ]
 description: A repair tools plugin used for Miner's Village server!
-softdepend: [Vault]
+softdepend: [Vault,CoreProtect]
 commands:
   xlop:
     description: 无消耗修复

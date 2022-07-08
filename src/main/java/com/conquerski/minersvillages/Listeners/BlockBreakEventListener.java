@@ -20,19 +20,18 @@ import org.bukkit.inventory.ItemStack;
  * @create 2022/7/8 13:50
  */
 public class BlockBreakEventListener implements Listener {
-    MiningRandom MiningRandom = new MiningRandom();
-
+    MiningRandom m = new MiningRandom();
     @EventHandler
     public void miningRandom(BlockBreakEvent event) {
         Player player = event.getPlayer();
         World world = player.getWorld();
         Block block = event.getBlock();
         Location location = block.getLocation();
-        if(MiningRandom.miningRandom(1000,"stone", block)){
+        if(m.miningRandom(1000,"stone", block)){
             world.dropItemNaturally(location, new ItemStack(Material.ENCHANTED_GOLDEN_APPLE));//奖励附魔金苹果
             PlayerSendMsg.SendMsgMining(player,1,"附魔金苹果");
         }
-        if(MiningRandom.miningRandom(200,"stone", block)){
+        if(m.miningRandom(200,"stone", block)){
             event.setExpToDrop(50);
             PlayerSendMsg.SendMsgMining(player,50,"Exp");
         }

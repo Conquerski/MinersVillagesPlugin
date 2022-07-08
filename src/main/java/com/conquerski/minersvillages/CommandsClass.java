@@ -1,5 +1,6 @@
 package com.conquerski.minersvillages;
 
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -7,16 +8,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
-
 import java.text.DecimalFormat;
 
-import static com.conquerski.minersvillages.MinersVillagesPlugin.econ;
+import static com.conquerski.minersvillages.Setup.econ;
 import static org.bukkit.enchantments.Enchantment.MENDING;
 
 
 public class CommandsClass implements CommandExecutor {
     ItemStack item;
-
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -43,7 +42,7 @@ public class CommandsClass implements CommandExecutor {
             String text;
             if(balance >= cost){
                 if(repairItems(meta)){
-                    econ.withdrawPlayer(player,cost);
+                    player.performCommand("pay tax "+cost);
                     balance = econ.getBalance(player);
                     text = "§6[樱花村修复]：§d你手里的物品已完好如初！本次修复花费§c"+cost+"§d元，你的账户余额还剩§b"+balance+"§d元。";
                     player.sendMessage(text);
