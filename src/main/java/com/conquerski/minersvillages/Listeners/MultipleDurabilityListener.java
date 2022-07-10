@@ -33,6 +33,7 @@ public class MultipleDurabilityListener implements Listener {
         } else {
             newDamage = damage;
         }
+        event.setDamage(newDamage);
 
         //随机事件
         int r = dr.nextInt(6);
