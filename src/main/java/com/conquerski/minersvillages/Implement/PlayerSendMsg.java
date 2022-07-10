@@ -32,7 +32,8 @@ public class PlayerSendMsg {
     public static void SendMsgMining(Player player, Integer amount, String name){
         if (name.equals("Exp")){
             player.sendMessage("§2[隐藏事件]§6你真是太幸运了，挖掘方块爆出了§b " + amount + " §6点§b经验值");
+        }else {
+            player.sendMessage("§2[隐藏事件]§6你真是太幸运了，掉落了 §b" + amount + " §6个 §b" + name);
         }
-        player.sendMessage("§2[隐藏事件]§6你真是太幸运了，掉落了 §b" + amount + " §6个 §b" + name);
     }
 }
