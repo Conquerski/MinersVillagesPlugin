@@ -15,7 +15,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
-import static com.conquerski.minersvillages.CommandsClass.repairCosts;
 
 
 public class repairGUI implements CommandExecutor {
@@ -79,7 +78,7 @@ public class repairGUI implements CommandExecutor {
         ItemMeta meta = item.getItemMeta();
         Damageable damageMeta = (Damageable) meta;
         int currentDamage = damageMeta.getDamage();
-        Double costs = repairCosts(meta);
+        //Double costs = repairCosts(meta);
 
         GuiItem ConfirmItem = ItemBuilder.from(Material.ANVIL).name(Component.text("§6✦ 确认修理 ✦")).asGuiItem();
         ArrayList<String> ConfirmItemLore = new ArrayList<>();
@@ -87,7 +86,7 @@ public class repairGUI implements CommandExecutor {
         ItemMeta newConfirmItemMeta = ConfirmItemStack.getItemMeta();
         ConfirmItemLore.add(0, "=========");
         ConfirmItemLore.add(1, "§f当前损耗耐久：§c" + currentDamage);
-        ConfirmItemLore.add(2, "§f修复所需花费：§b" + costs);
+        //ConfirmItemLore.add(2, "§f修复所需花费：§b" + costs);
         newConfirmItemMeta.setLore(ConfirmItemLore);
         ConfirmItemStack.setItemMeta(newConfirmItemMeta);
 
