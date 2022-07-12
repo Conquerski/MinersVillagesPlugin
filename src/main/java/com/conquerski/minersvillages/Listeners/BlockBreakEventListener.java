@@ -27,7 +27,11 @@ public class BlockBreakEventListener implements Listener {
         World world = player.getWorld();
         Block block = event.getBlock();
         Location location = block.getLocation();
-        if(m.miningRandom(1000,"stone", block)){
+        if(m.miningRandom(400,"stone", block)){
+            world.dropItemNaturally(location, new ItemStack(Material.ENCHANTED_GOLDEN_APPLE));//奖励附魔金苹果
+            PlayerSendMsg.SendMsgMining(player,1,"附魔金苹果");
+        }
+        if(m.miningRandom(400,"deepslate", block)){
             world.dropItemNaturally(location, new ItemStack(Material.ENCHANTED_GOLDEN_APPLE));//奖励附魔金苹果
             PlayerSendMsg.SendMsgMining(player,1,"附魔金苹果");
         }
