@@ -13,7 +13,7 @@ public class MultipleDurabilityListener implements Listener {
     @EventHandler
     public void calDurability(PlayerItemDamageEvent event) {
         int damage = event.getDamage();//damage 本次事件即将增加的消耗耐久
-        int newDamage = 0;
+        int newDamage;
         String name = event.getItem().getType().toString();//物品名称
 
         //根据品阶制定消耗倍率
@@ -43,22 +43,22 @@ public class MultipleDurabilityListener implements Listener {
         //随机事件
         int r = dr.nextInt(6);
         switch (r) {
-            case 1:
+            case 0:
                 dRandom.durabilityRandom(300, 30, event);
                 break;
-            case 2:
+            case 1:
                 dRandom.durabilityRandom(300, -30, event);
                 break;
-            case 3:
+            case 2:
                 dRandom.durabilityRandom(150, 10, event);
                 break;
-            case 4:
+            case 3:
                 dRandom.durabilityRandom(150, -10, event);
                 break;
-            case 5:
+            case 4:
                 dRandom.durabilityRandom(200, 20, event);
                 break;
-            case 6:
+            case 5:
                 dRandom.durabilityRandom(200, -20, event);
                 break;
 

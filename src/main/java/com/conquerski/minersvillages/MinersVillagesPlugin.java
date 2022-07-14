@@ -7,6 +7,8 @@ import com.conquerski.minersvillages.Gui.repairGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 
 public final class MinersVillagesPlugin extends JavaPlugin {
 
@@ -14,9 +16,9 @@ public final class MinersVillagesPlugin extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
 
-        Bukkit.getPluginCommand("xlop").setExecutor(new CommandsClass());
-        Bukkit.getPluginCommand("xl").setExecutor(new CommandsClass());
-        Bukkit.getPluginCommand("xlgui").setExecutor(new repairGUI());
+        Objects.requireNonNull(Bukkit.getPluginCommand("xlop")).setExecutor(new CommandsClass());
+        Objects.requireNonNull(Bukkit.getPluginCommand("xl")).setExecutor(new CommandsClass());
+        Objects.requireNonNull(Bukkit.getPluginCommand("xlgui")).setExecutor(new repairGUI());
 
         Bukkit.getPluginManager().registerEvents(new NoMendingListener(), this);
         Bukkit.getPluginManager().registerEvents(new MultipleDurabilityListener(), this);
