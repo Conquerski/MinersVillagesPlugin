@@ -15,8 +15,11 @@ public class MultipleDurabilityListener implements Listener {
         int damage = event.getDamage();//damage 本次事件即将增加的消耗耐久
         int newDamage = 0;
         String name = event.getItem().getType().toString();//物品名称
+
         //根据品阶制定消耗倍率
-        if (name.contains("NETHERITE")) {
+        if (name.contains("HELMET")||name.contains("CHESTPLATE")||name.contains("LEGGINGS")||name.contains("BOOTS")){
+            newDamage = 2 * damage;
+        } else if (name.contains("NETHERITE")) {
             newDamage = 6 * damage;
         } else if (name.contains("DIAMOND")) {
             newDamage = 5 * damage;
@@ -29,10 +32,12 @@ public class MultipleDurabilityListener implements Listener {
         } else if (name.contains("WOODEN")) {
             newDamage = damage;
         } else if (name.contains("ELYTRA")) {
-            newDamage = damage;
+            newDamage = 2 * damage;
         } else {
             newDamage = damage;
         }
+
+
         event.setDamage(newDamage);
 
         //随机事件

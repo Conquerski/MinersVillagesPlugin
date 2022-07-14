@@ -59,15 +59,19 @@ public class repairItems{
         int quantity;
         int coe = meta.getEnchantLevel(DURABILITY);
         double typeCoe;
-        String type = item.getType().toString().toLowerCase();
+        String type = item.getType().toString();
 
-        if (type.contains("diamond")){
-            typeCoe = 1.2;
-        } else if (type.contains("netherite")) {
-            typeCoe = 1.5;
+        if (type.contains("HELMET")||type.contains("CHESTPLATE")||type.contains("LEGGINGS")||type.contains("BOOTS")){
+            typeCoe = 0.8;
+        } else if (type.contains("DIAMOND")){
+            typeCoe = 1.15;
+        } else if (type.contains("NETHERITE")) {
+            typeCoe = 1.4;
         } else {
             typeCoe = 1;
         }
+
+
         if (meta.getEnchantLevel(MENDING) == 1){
             quantity = meta.getEnchants().size() - 1;
         }else {

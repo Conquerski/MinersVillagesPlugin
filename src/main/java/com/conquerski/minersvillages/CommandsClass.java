@@ -16,9 +16,7 @@ public class CommandsClass implements CommandExecutor {
         Player player = (Player) sender;
         String commandName = command.getName().toLowerCase();
         ItemStack item = player.getInventory().getItemInMainHand();
-        if(commandName.equals("xlop")) {
-            return repairItems.repairIt(item,player);
-        } else if (commandName.equals("xl")) {
+        if (commandName.equals("xl")) {
             return repairItems.repairIt(item,player);
         }
         return false;
